@@ -46,7 +46,7 @@ static AboutBox *sharedInstance = nil;
   if (!appNameField)
   {
     NSWindow *theWindow;
-    NSString *creditsPath;
+    NSURL *creditsPath;
     NSAttributedString *creditsString;
     NSString *appName;
     NSString *versionString;
@@ -81,8 +81,9 @@ static AboutBox *sharedInstance = nil;
     [versionField setStringValue:[NSString stringWithFormat:@"Version %@", versionString]];
 
     // Setup our credits
-    creditsPath = [[NSBundle mainBundle] pathForResource:@"Credits" ofType:@"html"];
-    creditsString = [[NSAttributedString alloc] initWithPath:creditsPath documentAttributes:nil];
+    creditsPath = [[NSBundle mainBundle] URLForResource:@"Credits" withExtension:@"html"];
+    creditsString = [[NSAttributedString alloc] initWithURL:creditsPath options:@{}
+                                         documentAttributes:NULL error:NULL];
 
     [creditsField replaceCharactersInRange:NSMakeRange( 0, 0 )
                     withRTF:[creditsString RTFFromRange:

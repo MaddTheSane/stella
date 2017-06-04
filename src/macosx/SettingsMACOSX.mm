@@ -46,7 +46,8 @@ void SettingsMACOSX::loadConfig()
     const SettingsArray& settings = getInternalSettings();
     for(uInt32 i = 0; i < settings.size(); ++i)
     {
-      NSString *prefVal = [defaults stringForKey:@(settings[i].key.c_str())];
+      NSString *key = @(settings[i].key.c_str());
+      NSString *prefVal = [defaults stringForKey:key];
       if (prefVal) {
         strncpy(cvalue, [prefVal cStringUsingEncoding: NSUTF8StringEncoding], 4090);
       } else {
@@ -64,8 +65,11 @@ void SettingsMACOSX::saveConfig()
 	@autoreleasepool {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     // Write out each of the key and value pairs
-    for(const auto& s: getInternalSettings())
-      [defaults setValue:@(s.value.toCString()) forKey:@(s.key.c_str())];
+    for(const auto& s: getInternalSettings()) {
+      NSString *key = @(s.key.c_str());
+      NSString *value = @(s.value.toCString());
+      [defaults setValue:value forKey:key];
+    }
     
     [defaults synchronize];
 	}
