@@ -2208,7 +2208,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0830;
-				ORGANIZATIONNAME = net.sourceforge.stella;
+				ORGANIZATIONNAME = "Stella-emu";
 			};
 			buildConfigurationList = 2D91752109BA903B0026E9FF /* Build configuration list for PBXProject "stella" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -2574,7 +2574,7 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = "$(LIBRARY_SEARCH_PATHS)";
 				OTHER_LDFLAGS = "-lz";
-				PRODUCT_BUNDLE_IDENTIFIER = net.sourceforge.stella;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.stella-emu.stella";
 				PRODUCT_NAME = Stella;
 				SECTORDER_FLAGS = "";
 				WRAPPER_EXTENSION = app;
@@ -2620,7 +2620,7 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = "$(LIBRARY_SEARCH_PATHS)";
 				OTHER_LDFLAGS = "-lz";
-				PRODUCT_BUNDLE_IDENTIFIER = net.sourceforge.stella;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.stella-emu.stella";
 				PRODUCT_NAME = Stella;
 				SECTORDER_FLAGS = "";
 				WRAPPER_EXTENSION = app;
