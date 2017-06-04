@@ -1257,8 +1257,8 @@
 			isa = PBXGroup;
 			children = (
 				55EE5AF51EE498BA00165DC6 /* libz.tbd */,
-				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 				DCDAF4D818CA9AAB00D3865D /* SDL2.framework */,
+				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
 			name = Frameworks;
