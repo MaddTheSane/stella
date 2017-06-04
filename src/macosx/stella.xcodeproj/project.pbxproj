@@ -213,6 +213,7 @@
 		2D91751209BA90380026E9FF /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D17D98E08BC398400E47F69 /* ApplicationServices.framework */; };
 		2DEFB40C09C3386F00754289 /* Cart.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2DEFB40B09C3386F00754289 /* Cart.icns */; };
 		55C3789D1EE3C3D90045DDD5 /* SDL2.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCDAF4D818CA9AAB00D3865D /* SDL2.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		55FE2A311EE3EB0700078ADE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 55FE2A2F1EE3EB0700078ADE /* InfoPlist.strings */; };
 		CFE3F60B1E84A9A200A8204E /* CartBUSWidget.cxx in Sources */ = {isa = PBXBuildFile; fileRef = CFE3F6071E84A9A200A8204E /* CartBUSWidget.cxx */; };
 		CFE3F60C1E84A9A200A8204E /* CartBUSWidget.hxx in Headers */ = {isa = PBXBuildFile; fileRef = CFE3F6081E84A9A200A8204E /* CartBUSWidget.hxx */; };
 		CFE3F60D1E84A9A200A8204E /* CartCDFWidget.cxx in Sources */ = {isa = PBXBuildFile; fileRef = CFE3F6091E84A9A200A8204E /* CartCDFWidget.cxx */; };
@@ -809,6 +810,7 @@
 		2DEFB40B09C3386F00754289 /* Cart.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Cart.icns; sourceTree = SOURCE_ROOT; };
 		2DF971D70892CEA400F64D23 /* DebuggerSystem.hxx */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.h; name = DebuggerSystem.hxx; path = ../debugger/DebuggerSystem.hxx; sourceTree = SOURCE_ROOT; };
 		2DF971DF0892CEA400F64D23 /* Expression.hxx */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.h; name = Expression.hxx; path = ../debugger/Expression.hxx; sourceTree = SOURCE_ROOT; };
+		55FE2A301EE3EB0700078ADE /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = InfoPlist.strings; sourceTree = "<group>"; };
 		B2F367C504C7ADC700A80002 /* SDLMain.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SDLMain.xib; sourceTree = "<group>"; };
 		CFE3F6071E84A9A200A8204E /* CartBUSWidget.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CartBUSWidget.cxx; path = ../debugger/gui/CartBUSWidget.cxx; sourceTree = "<group>"; };
 		CFE3F6081E84A9A200A8204E /* CartBUSWidget.hxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = CartBUSWidget.hxx; path = ../debugger/gui/CartBUSWidget.hxx; sourceTree = "<group>"; };
@@ -1237,6 +1239,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				55FE2A2F1EE3EB0700078ADE /* InfoPlist.strings */,
 				2D113E090672BF2100317017 /* docs */,
 				2D16A8E106324136005DF364 /* Stella.icns */,
 				2DEFB40B09C3386F00754289 /* Cart.icns */,
@@ -2232,6 +2235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D91746E09BA90380026E9FF /* SDLMain.xib in Resources */,
+				55FE2A311EE3EB0700078ADE /* InfoPlist.strings in Resources */,
 				2D91746F09BA90380026E9FF /* Stella.icns in Resources */,
 				2D91747009BA90380026E9FF /* Credits.html in Resources */,
 				2D91747109BA90380026E9FF /* docs in Resources */,
@@ -2517,6 +2521,18 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		55FE2A2F1EE3EB0700078ADE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				55FE2A301EE3EB0700078ADE /* English */,
+			);
+			name = InfoPlist.strings;
+			path = English.lproj;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		2D91751709BA90380026E9FF /* Debug */ = {
