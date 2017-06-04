@@ -70,7 +70,6 @@
 		2D91741909BA90380026E9FF /* CartUA.hxx in Headers */ = {isa = PBXBuildFile; fileRef = 2DDBEB7108457B7D00812C11 /* CartUA.hxx */; };
 		2D91741A09BA90380026E9FF /* FSNode.hxx in Headers */ = {isa = PBXBuildFile; fileRef = 2DDBEB7308457B7D00812C11 /* FSNode.hxx */; };
 		2D91741B09BA90380026E9FF /* OSystem.hxx in Headers */ = {isa = PBXBuildFile; fileRef = 2DDBEB7508457B7D00812C11 /* OSystem.hxx */; };
-		2D91741D09BA90380026E9FF /* Preferences.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DDBEBE3084582C400812C11 /* Preferences.h */; };
 		2D91741F09BA90380026E9FF /* AboutBox.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D1A6CD4085135F9007CDBA8 /* AboutBox.h */; };
 		2D91742009BA90380026E9FF /* ConsoleFont.hxx in Headers */ = {isa = PBXBuildFile; fileRef = 2D9217FA0857CC88001D664B /* ConsoleFont.hxx */; };
 		2D91742109BA90380026E9FF /* Font.hxx in Headers */ = {isa = PBXBuildFile; fileRef = 2D9217FC0857CC88001D664B /* Font.hxx */; };
@@ -110,11 +109,11 @@
 		2D91746609BA90380026E9FF /* AudioWidget.hxx in Headers */ = {isa = PBXBuildFile; fileRef = 2D2331900900B5EF00613B1F /* AudioWidget.hxx */; };
 		2D91746909BA90380026E9FF /* EventMappingWidget.hxx in Headers */ = {isa = PBXBuildFile; fileRef = 2D05FF5F096E269100A518FE /* EventMappingWidget.hxx */; };
 		2D91746A09BA90380026E9FF /* InputDialog.hxx in Headers */ = {isa = PBXBuildFile; fileRef = 2D05FF61096E269100A518FE /* InputDialog.hxx */; };
-		2D91746E09BA90380026E9FF /* SDLMain.nib in Resources */ = {isa = PBXBuildFile; fileRef = B2F367C504C7ADC700A80002 /* SDLMain.nib */; };
+		2D91746E09BA90380026E9FF /* SDLMain.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2F367C504C7ADC700A80002 /* SDLMain.xib */; };
 		2D91746F09BA90380026E9FF /* Stella.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2D16A8E106324136005DF364 /* Stella.icns */; };
 		2D91747009BA90380026E9FF /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 2D7B4F6C063B513200579B93 /* Credits.html */; };
 		2D91747109BA90380026E9FF /* docs in Resources */ = {isa = PBXBuildFile; fileRef = 2D113E090672BF2100317017 /* docs */; };
-		2D91747209BA90380026E9FF /* AboutBox.nib in Resources */ = {isa = PBXBuildFile; fileRef = 2D1A6CD808513610007CDBA8 /* AboutBox.nib */; };
+		2D91747209BA90380026E9FF /* AboutBox.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D1A6CD808513610007CDBA8 /* AboutBox.xib */; };
 		2D91747409BA90380026E9FF /* SDLMain.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A47A9E01A0483001D3D55B /* SDLMain.m */; };
 		2D91747509BA90380026E9FF /* Booster.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 2DE2DF100627AE07006BEC99 /* Booster.cxx */; };
 		2D91747609BA90380026E9FF /* Cart.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 2DE2DF120627AE07006BEC99 /* Cart.cxx */; };
@@ -149,7 +148,7 @@
 		2D9174A109BA90380026E9FF /* EventHandler.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 2D733D6E062895B2006265D9 /* EventHandler.cxx */; };
 		2D9174A209BA90380026E9FF /* FrameBuffer.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 2D733D70062895B2006265D9 /* FrameBuffer.cxx */; };
 		2D9174A309BA90380026E9FF /* Settings.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 2D944848062904E800DD9879 /* Settings.cxx */; };
-		2D9174A409BA90380026E9FF /* SettingsMACOSX.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 2D944866062911CD00DD9879 /* SettingsMACOSX.cxx */; };
+		2D9174A409BA90380026E9FF /* SettingsMACOSX.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2D944866062911CD00DD9879 /* SettingsMACOSX.mm */; };
 		2D9174A809BA90380026E9FF /* FSNodePOSIX.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 2DDBEA0C0845708800812C11 /* FSNodePOSIX.cxx */; };
 		2D9174A909BA90380026E9FF /* OSystemMACOSX.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 2DDBEA0E0845709700812C11 /* OSystemMACOSX.cxx */; };
 		2D9174AA09BA90380026E9FF /* AboutDialog.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 2DDBEAA3084578BF00812C11 /* AboutDialog.cxx */; };
@@ -174,7 +173,6 @@
 		2D9174BE09BA90380026E9FF /* CartUA.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 2DDBEB7008457B7D00812C11 /* CartUA.cxx */; };
 		2D9174BF09BA90380026E9FF /* FSNode.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 2DDBEB7208457B7D00812C11 /* FSNode.cxx */; };
 		2D9174C009BA90380026E9FF /* OSystem.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 2DDBEB7408457B7D00812C11 /* OSystem.cxx */; };
-		2D9174C209BA90380026E9FF /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DDBEBE4084582C400812C11 /* Preferences.m */; };
 		2D9174C409BA90380026E9FF /* AboutBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A6CD5085135F9007CDBA8 /* AboutBox.m */; };
 		2D9174C509BA90380026E9FF /* Font.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 2D9217FB0857CC88001D664B /* Font.cxx */; };
 		2D9174C609BA90380026E9FF /* Debugger.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 2D659E2D085D3DD6005D96C8 /* Debugger.cxx */; };
@@ -214,6 +212,7 @@
 		2D91751009BA90380026E9FF /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DEB3D4C0629BD24007EBBD3 /* OpenGL.framework */; };
 		2D91751209BA90380026E9FF /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D17D98E08BC398400E47F69 /* ApplicationServices.framework */; };
 		2DEFB40C09C3386F00754289 /* Cart.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2DEFB40B09C3386F00754289 /* Cart.icns */; };
+		55C3789D1EE3C3D90045DDD5 /* SDL2.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCDAF4D818CA9AAB00D3865D /* SDL2.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CFE3F60B1E84A9A200A8204E /* CartBUSWidget.cxx in Sources */ = {isa = PBXBuildFile; fileRef = CFE3F6071E84A9A200A8204E /* CartBUSWidget.cxx */; };
 		CFE3F60C1E84A9A200A8204E /* CartBUSWidget.hxx in Headers */ = {isa = PBXBuildFile; fileRef = CFE3F6081E84A9A200A8204E /* CartBUSWidget.hxx */; };
 		CFE3F60D1E84A9A200A8204E /* CartCDFWidget.cxx in Sources */ = {isa = PBXBuildFile; fileRef = CFE3F6091E84A9A200A8204E /* CartCDFWidget.cxx */; };
@@ -521,7 +520,6 @@
 		DCDA03B01A2009BB00711920 /* CartWD.cxx in Sources */ = {isa = PBXBuildFile; fileRef = DCDA03AE1A2009BA00711920 /* CartWD.cxx */; };
 		DCDA03B11A2009BB00711920 /* CartWD.hxx in Headers */ = {isa = PBXBuildFile; fileRef = DCDA03AF1A2009BB00711920 /* CartWD.hxx */; };
 		DCDAF4D918CA9AAB00D3865D /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCDAF4D818CA9AAB00D3865D /* SDL2.framework */; };
-		DCDAF4DB18CA9AF000D3865D /* SDL2.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCDAF4DA18CA9AF000D3865D /* SDL2.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		DCDE17FA17724E5D00EB1AC6 /* ConfigPathDialog.cxx in Sources */ = {isa = PBXBuildFile; fileRef = DCDE17F617724E5D00EB1AC6 /* ConfigPathDialog.cxx */; };
 		DCDE17FB17724E5D00EB1AC6 /* ConfigPathDialog.hxx in Headers */ = {isa = PBXBuildFile; fileRef = DCDE17F717724E5D00EB1AC6 /* ConfigPathDialog.hxx */; };
 		DCDE17FC17724E5D00EB1AC6 /* SnapshotDialog.cxx in Sources */ = {isa = PBXBuildFile; fileRef = DCDE17F817724E5D00EB1AC6 /* SnapshotDialog.cxx */; };
@@ -617,7 +615,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				DCDAF4DB18CA9AF000D3865D /* SDL2.framework in CopyFiles */,
+				55C3789D1EE3C3D90045DDD5 /* SDL2.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -633,9 +631,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
-		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
-		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2D02207F08A301F200B9C76B /* InputTextDialog.cxx */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = InputTextDialog.cxx; path = ../gui/InputTextDialog.cxx; sourceTree = SOURCE_ROOT; };
 		2D02208008A301F200B9C76B /* InputTextDialog.hxx */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.h; name = InputTextDialog.hxx; path = ../gui/InputTextDialog.hxx; sourceTree = SOURCE_ROOT; };
 		2D05FF5E096E269100A518FE /* EventMappingWidget.cxx */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = EventMappingWidget.cxx; path = ../gui/EventMappingWidget.cxx; sourceTree = SOURCE_ROOT; };
@@ -644,10 +642,10 @@
 		2D05FF61096E269100A518FE /* InputDialog.hxx */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.h; name = InputDialog.hxx; path = ../gui/InputDialog.hxx; sourceTree = SOURCE_ROOT; };
 		2D113E090672BF2100317017 /* docs */ = {isa = PBXFileReference; explicitFileType = folder; name = docs; path = ../../docs; sourceTree = "<group>"; };
 		2D16A8E106324136005DF364 /* Stella.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Stella.icns; sourceTree = SOURCE_ROOT; };
-		2D17D98E08BC398400E47F69 /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = /System/Library/Frameworks/ApplicationServices.framework; sourceTree = "<absolute>"; };
+		2D17D98E08BC398400E47F69 /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = System/Library/Frameworks/ApplicationServices.framework; sourceTree = SDKROOT; };
 		2D1A6CD4085135F9007CDBA8 /* AboutBox.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = AboutBox.h; sourceTree = SOURCE_ROOT; };
 		2D1A6CD5085135F9007CDBA8 /* AboutBox.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = AboutBox.m; sourceTree = SOURCE_ROOT; };
-		2D1A6CD808513610007CDBA8 /* AboutBox.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = AboutBox.nib; sourceTree = SOURCE_ROOT; };
+		2D1A6CD808513610007CDBA8 /* AboutBox.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutBox.xib; sourceTree = SOURCE_ROOT; };
 		2D20F9E408C603EC00A73076 /* ColorWidget.cxx */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = ColorWidget.cxx; path = ../debugger/gui/ColorWidget.cxx; sourceTree = SOURCE_ROOT; };
 		2D20F9E508C603EC00A73076 /* ColorWidget.hxx */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.h; name = ColorWidget.hxx; path = ../debugger/gui/ColorWidget.hxx; sourceTree = SOURCE_ROOT; };
 		2D20F9E608C603EC00A73076 /* CpuWidget.cxx */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = CpuWidget.cxx; path = ../debugger/gui/CpuWidget.cxx; sourceTree = SOURCE_ROOT; };
@@ -704,12 +702,12 @@
 		2D73959408C3EB4E0060BB99 /* CommandDialog.hxx */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.h; name = CommandDialog.hxx; path = ../gui/CommandDialog.hxx; sourceTree = SOURCE_ROOT; };
 		2D73959508C3EB4E0060BB99 /* CommandMenu.cxx */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = CommandMenu.cxx; path = ../gui/CommandMenu.cxx; sourceTree = SOURCE_ROOT; };
 		2D73959608C3EB4E0060BB99 /* CommandMenu.hxx */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.h; name = CommandMenu.hxx; path = ../gui/CommandMenu.hxx; sourceTree = SOURCE_ROOT; };
-		2D7B4F6C063B513200579B93 /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.html; path = Credits.html; sourceTree = SOURCE_ROOT; };
+		2D7B4F6C063B513200579B93 /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = SOURCE_ROOT; };
 		2D9217FA0857CC88001D664B /* ConsoleFont.hxx */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.h; name = ConsoleFont.hxx; path = ../gui/ConsoleFont.hxx; sourceTree = SOURCE_ROOT; };
 		2D9217FB0857CC88001D664B /* Font.cxx */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = Font.cxx; path = ../gui/Font.cxx; sourceTree = SOURCE_ROOT; };
 		2D9217FC0857CC88001D664B /* Font.hxx */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.h; name = Font.hxx; path = ../gui/Font.hxx; sourceTree = SOURCE_ROOT; };
 		2D944848062904E800DD9879 /* Settings.cxx */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = Settings.cxx; path = ../emucore/Settings.cxx; sourceTree = SOURCE_ROOT; };
-		2D944866062911CD00DD9879 /* SettingsMACOSX.cxx */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; path = SettingsMACOSX.cxx; sourceTree = "<group>"; };
+		2D944866062911CD00DD9879 /* SettingsMACOSX.mm */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.objcpp; path = SettingsMACOSX.mm; sourceTree = "<group>"; };
 		2D94486C0629124700DD9879 /* SettingsMACOSX.hxx */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.h; path = SettingsMACOSX.hxx; sourceTree = "<group>"; };
 		2D9555D90880E78000466554 /* Cart3E.cxx */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = Cart3E.cxx; path = ../emucore/Cart3E.cxx; sourceTree = SOURCE_ROOT; };
 		2D9555DA0880E78000466554 /* Cart3E.hxx */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.h; name = Cart3E.hxx; path = ../emucore/Cart3E.hxx; sourceTree = SOURCE_ROOT; };
@@ -764,8 +762,6 @@
 		2DDBEB7308457B7D00812C11 /* FSNode.hxx */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.h; name = FSNode.hxx; path = ../emucore/FSNode.hxx; sourceTree = SOURCE_ROOT; };
 		2DDBEB7408457B7D00812C11 /* OSystem.cxx */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = OSystem.cxx; path = ../emucore/OSystem.cxx; sourceTree = SOURCE_ROOT; };
 		2DDBEB7508457B7D00812C11 /* OSystem.hxx */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.h; name = OSystem.hxx; path = ../emucore/OSystem.hxx; sourceTree = SOURCE_ROOT; };
-		2DDBEBE3084582C400812C11 /* Preferences.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = Preferences.h; sourceTree = SOURCE_ROOT; };
-		2DDBEBE4084582C400812C11 /* Preferences.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = Preferences.m; sourceTree = SOURCE_ROOT; };
 		2DE2DF100627AE07006BEC99 /* Booster.cxx */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = Booster.cxx; path = ../emucore/Booster.cxx; sourceTree = SOURCE_ROOT; };
 		2DE2DF110627AE07006BEC99 /* Booster.hxx */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.h; name = Booster.hxx; path = ../emucore/Booster.hxx; sourceTree = SOURCE_ROOT; };
 		2DE2DF120627AE07006BEC99 /* Cart.cxx */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = Cart.cxx; path = ../emucore/Cart.cxx; sourceTree = SOURCE_ROOT; };
@@ -831,7 +827,7 @@
 		2DE2DF8F0627AE34006BEC99 /* Switches.hxx */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.h; name = Switches.hxx; path = ../emucore/Switches.hxx; sourceTree = SOURCE_ROOT; };
 		2DE7242D08CE910900C889A8 /* TIASnd.cxx */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = TIASnd.cxx; path = ../emucore/TIASnd.cxx; sourceTree = SOURCE_ROOT; };
 		2DE7242E08CE910900C889A8 /* TIASnd.hxx */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.h; name = TIASnd.hxx; path = ../emucore/TIASnd.hxx; sourceTree = SOURCE_ROOT; };
-		2DEB3D4C0629BD24007EBBD3 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
+		2DEB3D4C0629BD24007EBBD3 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		2DEF21F808BC033500B246B4 /* CheckListWidget.cxx */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = CheckListWidget.cxx; path = ../gui/CheckListWidget.cxx; sourceTree = SOURCE_ROOT; };
 		2DEF21F908BC033500B246B4 /* CheckListWidget.hxx */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.h; name = CheckListWidget.hxx; path = ../gui/CheckListWidget.hxx; sourceTree = SOURCE_ROOT; };
 		2DEF21FA08BC033500B246B4 /* StringListWidget.cxx */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = StringListWidget.cxx; path = ../gui/StringListWidget.cxx; sourceTree = SOURCE_ROOT; };
@@ -839,7 +835,7 @@
 		2DEFB40B09C3386F00754289 /* Cart.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Cart.icns; sourceTree = SOURCE_ROOT; };
 		2DF971D70892CEA400F64D23 /* DebuggerSystem.hxx */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.h; name = DebuggerSystem.hxx; path = ../debugger/DebuggerSystem.hxx; sourceTree = SOURCE_ROOT; };
 		2DF971DF0892CEA400F64D23 /* Expression.hxx */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.h; name = Expression.hxx; path = ../debugger/Expression.hxx; sourceTree = SOURCE_ROOT; };
-		B2F367C504C7ADC700A80002 /* SDLMain.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = SDLMain.nib; sourceTree = "<group>"; };
+		B2F367C504C7ADC700A80002 /* SDLMain.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SDLMain.xib; sourceTree = "<group>"; };
 		CFE3F6071E84A9A200A8204E /* CartBUSWidget.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CartBUSWidget.cxx; path = ../debugger/gui/CartBUSWidget.cxx; sourceTree = "<group>"; };
 		CFE3F6081E84A9A200A8204E /* CartBUSWidget.hxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = CartBUSWidget.hxx; path = ../debugger/gui/CartBUSWidget.hxx; sourceTree = "<group>"; };
 		CFE3F6091E84A9A200A8204E /* CartCDFWidget.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CartCDFWidget.cxx; path = ../debugger/gui/CartCDFWidget.cxx; sourceTree = "<group>"; };
@@ -1149,7 +1145,6 @@
 		DCDA03AE1A2009BA00711920 /* CartWD.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CartWD.cxx; path = ../emucore/CartWD.cxx; sourceTree = "<group>"; };
 		DCDA03AF1A2009BB00711920 /* CartWD.hxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = CartWD.hxx; path = ../emucore/CartWD.hxx; sourceTree = "<group>"; };
 		DCDAF4D818CA9AAB00D3865D /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = /Library/Frameworks/SDL2.framework; sourceTree = "<absolute>"; };
-		DCDAF4DA18CA9AF000D3865D /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = /Library/Frameworks/SDL2.framework; sourceTree = "<absolute>"; };
 		DCDE17F617724E5D00EB1AC6 /* ConfigPathDialog.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ConfigPathDialog.cxx; path = ../gui/ConfigPathDialog.cxx; sourceTree = SOURCE_ROOT; };
 		DCDE17F717724E5D00EB1AC6 /* ConfigPathDialog.hxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ConfigPathDialog.hxx; path = ../gui/ConfigPathDialog.hxx; sourceTree = SOURCE_ROOT; };
 		DCDE17F817724E5D00EB1AC6 /* SnapshotDialog.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SnapshotDialog.cxx; path = ../gui/SnapshotDialog.cxx; sourceTree = SOURCE_ROOT; };
@@ -1233,21 +1228,12 @@
 			children = (
 				2D1A6CD4085135F9007CDBA8 /* AboutBox.h */,
 				2D1A6CD5085135F9007CDBA8 /* AboutBox.m */,
-				2DDBEBE3084582C400812C11 /* Preferences.h */,
-				2DDBEBE4084582C400812C11 /* Preferences.m */,
 				F5A47A9D01A0482F01D3D55B /* SDLMain.h */,
 				F5A47A9E01A0483001D3D55B /* SDLMain.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
-		};
-		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
-			);
-			name = "Linked Frameworks";
-			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
 			isa = PBXGroup;
@@ -1271,7 +1257,6 @@
 		29B97314FDCFA39411CA2CEA /* «PROJECTNAMEASXML» */ = {
 			isa = PBXGroup;
 			children = (
-				DCDAF4DA18CA9AF000D3865D /* SDL2.framework */,
 				DCA43BFF10DED5890070CEFD /* Info-Stella.plist */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -1309,8 +1294,8 @@
 				2D16A8E106324136005DF364 /* Stella.icns */,
 				2DEFB40B09C3386F00754289 /* Cart.icns */,
 				2D7B4F6C063B513200579B93 /* Credits.html */,
-				B2F367C504C7ADC700A80002 /* SDLMain.nib */,
-				2D1A6CD808513610007CDBA8 /* AboutBox.nib */,
+				B2F367C504C7ADC700A80002 /* SDLMain.xib */,
+				2D1A6CD808513610007CDBA8 /* AboutBox.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1318,8 +1303,8 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 				DCDAF4D818CA9AAB00D3865D /* SDL2.framework */,
-				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
 			name = Frameworks;
@@ -1522,7 +1507,7 @@
 				2DDBEA0F0845709700812C11 /* OSystemMACOSX.hxx */,
 				DC1FC1880DB3B2C7009B3DF7 /* SerialPortMACOSX.cxx */,
 				DC1FC1890DB3B2C7009B3DF7 /* SerialPortMACOSX.hxx */,
-				2D944866062911CD00DD9879 /* SettingsMACOSX.cxx */,
+				2D944866062911CD00DD9879 /* SettingsMACOSX.mm */,
 				2D94486C0629124700DD9879 /* SettingsMACOSX.hxx */,
 			);
 			name = macosx;
@@ -2063,7 +2048,6 @@
 				DCE8B1871E7E03B300189864 /* FrameLayout.hxx in Headers */,
 				2D91741A09BA90380026E9FF /* FSNode.hxx in Headers */,
 				2D91741B09BA90380026E9FF /* OSystem.hxx in Headers */,
-				2D91741D09BA90380026E9FF /* Preferences.h in Headers */,
 				DC6A18F919B3E65500DEB242 /* CartMDMWidget.hxx in Headers */,
 				2D91741F09BA90380026E9FF /* AboutBox.h in Headers */,
 				2D91742009BA90380026E9FF /* ConsoleFont.hxx in Headers */,
@@ -2318,7 +2302,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0830;
-				ORGANIZATIONNAME = "Stella-emu";
+				ORGANIZATIONNAME = net.sourceforge.stella;
 			};
 			buildConfigurationList = 2D91752109BA903B0026E9FF /* Build configuration list for PBXProject "stella" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -2344,11 +2328,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D91746E09BA90380026E9FF /* SDLMain.nib in Resources */,
+				2D91746E09BA90380026E9FF /* SDLMain.xib in Resources */,
 				2D91746F09BA90380026E9FF /* Stella.icns in Resources */,
 				2D91747009BA90380026E9FF /* Credits.html in Resources */,
 				2D91747109BA90380026E9FF /* docs in Resources */,
-				2D91747209BA90380026E9FF /* AboutBox.nib in Resources */,
+				2D91747209BA90380026E9FF /* AboutBox.xib in Resources */,
 				2DEFB40C09C3386F00754289 /* Cart.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2413,7 +2397,7 @@
 				2D9174A109BA90380026E9FF /* EventHandler.cxx in Sources */,
 				2D9174A209BA90380026E9FF /* FrameBuffer.cxx in Sources */,
 				2D9174A309BA90380026E9FF /* Settings.cxx in Sources */,
-				2D9174A409BA90380026E9FF /* SettingsMACOSX.cxx in Sources */,
+				2D9174A409BA90380026E9FF /* SettingsMACOSX.mm in Sources */,
 				2D9174A809BA90380026E9FF /* FSNodePOSIX.cxx in Sources */,
 				2D9174A909BA90380026E9FF /* OSystemMACOSX.cxx in Sources */,
 				2D9174AA09BA90380026E9FF /* AboutDialog.cxx in Sources */,
@@ -2449,7 +2433,6 @@
 				2D9174BF09BA90380026E9FF /* FSNode.cxx in Sources */,
 				DCF3A6FE1DFC75E3008A8AF3 /* TIA.cxx in Sources */,
 				2D9174C009BA90380026E9FF /* OSystem.cxx in Sources */,
-				2D9174C209BA90380026E9FF /* Preferences.m in Sources */,
 				2D9174C409BA90380026E9FF /* AboutBox.m in Sources */,
 				2D9174C509BA90380026E9FF /* Font.cxx in Sources */,
 				2D9174C609BA90380026E9FF /* Debugger.cxx in Sources */,
@@ -2689,7 +2672,7 @@
 				LIBRARY_SEARCH_PATHS = "$(LIBRARY_SEARCH_PATHS)";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "-lz";
-				PRODUCT_BUNDLE_IDENTIFIER = "Stella-emu";
+				PRODUCT_BUNDLE_IDENTIFIER = net.sourceforge.Stella;
 				PRODUCT_NAME = Stella;
 				SECTORDER_FLAGS = "";
 				WARNING_CFLAGS = (
@@ -2741,7 +2724,7 @@
 				LIBRARY_SEARCH_PATHS = "$(LIBRARY_SEARCH_PATHS)";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "-lz";
-				PRODUCT_BUNDLE_IDENTIFIER = "Stella-emu";
+				PRODUCT_BUNDLE_IDENTIFIER = net.sourceforge.Stella;
 				PRODUCT_NAME = Stella;
 				SECTORDER_FLAGS = "";
 				WARNING_CFLAGS = (
@@ -2792,7 +2775,7 @@
 				LIBRARY_SEARCH_PATHS = .;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "-lz";
-				PRODUCT_BUNDLE_IDENTIFIER = "Stella-emu";
+				PRODUCT_BUNDLE_IDENTIFIER = net.sourceforge.Stella;
 				PRODUCT_NAME = Stella;
 				SECTORDER_FLAGS = "";
 				WARNING_CFLAGS = (

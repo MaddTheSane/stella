@@ -50,7 +50,7 @@
                     <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="41">
                         <rect key="frame" x="69" y="55" width="408" height="247"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <clipView key="contentView" id="ajr-JR-lya">
+                        <clipView key="contentView" id="kyC-Jb-C4T">
                             <rect key="frame" x="1" y="1" width="406" height="245"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
