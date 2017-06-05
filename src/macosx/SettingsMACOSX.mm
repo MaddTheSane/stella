@@ -22,12 +22,6 @@
 #undef BytePtr
 #import <Foundation/Foundation.h>
 
-extern "C" {
-  void prefsSetString(const char* key, const char* value);
-  void prefsGetString(const char* key, char* value, int size);
-  void prefsSave(void);
-}
-
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 SettingsMACOSX::SettingsMACOSX(OSystem& osystem)
   : Settings(osystem)
