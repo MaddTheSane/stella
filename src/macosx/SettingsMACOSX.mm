@@ -32,7 +32,6 @@ SettingsMACOSX::SettingsMACOSX(OSystem& osystem)
 void SettingsMACOSX::loadConfig()
 {
   @autoreleasepool {
-    string key, value;
     char cvalue[4096];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     

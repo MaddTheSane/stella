@@ -2564,7 +2564,7 @@
 				);
 				HEADER_SEARCH_PATHS = /Library/Frameworks/SDL2.framework/Headers;
 				INFOPLIST_FILE = "Info-Stella.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.github.stella-emu.stella";
+				PRODUCT_BUNDLE_IDENTIFIER = "Stella-emu";
 				PRODUCT_NAME = Stella;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "../cheat ../common ../common/tv_filters ../debugger ../debugger/gui ../emucore ../gui ../yacc .";
@@ -2597,7 +2597,7 @@
 				);
 				HEADER_SEARCH_PATHS = /Library/Frameworks/SDL2.framework/Headers;
 				INFOPLIST_FILE = "Info-Stella.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.github.stella-emu.stella";
+				PRODUCT_BUNDLE_IDENTIFIER = "Stella-emu";
 				PRODUCT_NAME = Stella;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "../cheat ../common ../common/tv_filters ../debugger ../debugger/gui ../emucore ../gui ../yacc .";
