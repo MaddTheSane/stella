@@ -39,7 +39,11 @@ class FrameManager : public Serializable
 
     static uInt8 initialGarbageFrames();
 
-    void setHandlers(callback frameStartCallback, callback frameCompletionCallback);
+    void setHandlers(
+      callback frameStartCallback,
+      callback frameCompletionCallback,
+      callback renderingStartCallback
+    );
 
     void reset();
 
@@ -49,7 +53,7 @@ class FrameManager : public Serializable
 
     void setVsync(bool vsync);
 
-    bool isRendering() const { return myState == State::frame; }
+    bool isRendering() const { return myState == State::frame && myHasStabilized; }
 
     FrameLayout layout() const { return myLayout; }
 
@@ -136,6 +140,7 @@ class FrameManager : public Serializable
 
     callback myOnFrameStart;
     callback myOnFrameComplete;
+    callback myOnRenderingStart;
 
     VblankManager myVblankManager;
 
@@ -155,6 +160,10 @@ class FrameManager : public Serializable
     uInt32 myFramesInMode;
     bool myModeConfirmed;
 
+    uInt32 myStableFrames;
+    uInt32 myStabilizationFrames;
+    bool myHasStabilized;
+
     bool myVsync;
 
     uInt32 myVblankLines;
@@ -165,6 +174,9 @@ class FrameManager : public Serializable
     uInt32 myFixedHeight;
 
     bool myJitterEnabled;
+
+    Int32 myStableFrameLines;
+    uInt8 myStableFrameHeightCountdown;
 
   private:
     FrameManager(const FrameManager&) = delete;

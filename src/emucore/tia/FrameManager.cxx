@@ -35,7 +35,11 @@ enum Metrics: uInt32 {
   maxUnderscan                  = 10,
   tvModeDetectionTolerance      = 20,
   initialGarbageFrames          = 10,
-  framesForModeConfirmation     = 5
+  framesForModeConfirmation     = 5,
+  minStableFrames               = 10,
+  maxStabilizationFrames        = 20,
+  minDeltaForJitter             = 3,
+  framesForStableHeight         = 2
 };
 
 static constexpr uInt32
@@ -67,11 +71,13 @@ FrameManager::FrameManager()
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 void FrameManager::setHandlers(
   FrameManager::callback frameStartCallback,
-  FrameManager::callback frameCompleteCallback
+  FrameManager::callback frameCompleteCallback,
+  FrameManager::callback renderingStartCallback
 )
 {
   myOnFrameStart = frameStartCallback;
   myOnFrameComplete = frameCompleteCallback;
+  myOnRenderingStart = renderingStartCallback;
 }
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -90,6 +96,12 @@ void FrameManager::reset()
   myVsyncLines = 0;
   myY = 0;
   myFramePending = false;
+  myStabilizationFrames = 0;
+  myStableFrames = 0;
+  myHasStabilized = false;
+
+  myStableFrameLines = -1;
+  myStableFrameHeightCountdown = 0;
 }
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -190,8 +202,22 @@ void FrameManager::setState(FrameManager::State state)
 
   switch (myState) {
     case State::waitForFrameStart:
+      if (!myHasStabilized) {
+        myHasStabilized =
+          myStableFrames >= Metrics::minStableFrames ||
+          myStabilizationFrames >= Metrics::maxStabilizationFrames;
+
+        myStabilizationFrames++;
+
+        if (myVblankManager.isStable())
+          myStableFrames++;
+        else
+          myStableFrames = 0;
+      }
+
       if (myFramePending) finalizeFrame();
       if (myOnFrameStart) myOnFrameStart();
+
       myVblankManager.start();
       myFramePending = true;
 
@@ -199,6 +225,7 @@ void FrameManager::setState(FrameManager::State state)
       break;
 
     case State::frame:
+      if (myOnRenderingStart) myOnRenderingStart();
       myVsyncLines = 0;
       myY = 0;
       break;
@@ -211,7 +238,20 @@ void FrameManager::setState(FrameManager::State state)
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 void FrameManager::finalizeFrame()
 {
-  handleJitter(myCurrentFrameTotalLines - myCurrentFrameFinalLines);
+  if (myCurrentFrameTotalLines != (uInt32)myStableFrameLines) {
+    if (myCurrentFrameTotalLines == myCurrentFrameFinalLines) {
+
+      if (++myStableFrameHeightCountdown >= Metrics::framesForStableHeight) {
+        if (myStableFrameLines >= 0) {
+          handleJitter(myCurrentFrameTotalLines - myStableFrameLines);
+        }
+
+        myStableFrameLines = myCurrentFrameTotalLines;
+      }
+
+    }
+    else myStableFrameHeightCountdown = 0;
+  }
 
   myPreviousFrameFinalLines = myCurrentFrameFinalLines;
   myCurrentFrameFinalLines = myCurrentFrameTotalLines;
@@ -233,7 +273,11 @@ void FrameManager::finalizeFrame()
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 void FrameManager::handleJitter(Int32 scanlineDifference)
 {
-  if (scanlineDifference == 0 || !myJitterEnabled || myTotalFrames < Metrics::initialGarbageFrames) return;
+  if (
+    (uInt32)abs(scanlineDifference) < Metrics::minDeltaForJitter ||
+    !myJitterEnabled ||
+    myTotalFrames < Metrics::initialGarbageFrames
+  ) return;
 
   myVblankManager.setJitter(scanlineDifference);
 }
@@ -360,6 +404,10 @@ bool FrameManager::save(Serializer& out) const
     out.putInt(myFramesInMode);
     out.putBool(myModeConfirmed);
 
+    out.putInt(myStableFrames);
+    out.putInt(myStabilizationFrames);
+    out.putBool(myHasStabilized);
+
     out.putBool(myVsync);
 
     out.putInt(myVblankLines);
@@ -370,6 +418,9 @@ bool FrameManager::save(Serializer& out) const
     out.putInt(myFixedHeight);
 
     out.putBool(myJitterEnabled);
+
+    out.putInt(myStableFrameLines);
+    out.putInt(myStableFrameHeightCountdown);
   }
   catch(...)
   {
@@ -406,6 +457,10 @@ bool FrameManager::load(Serializer& in)
     myFramesInMode = in.getInt();
     myModeConfirmed = in.getBool();
 
+    myStableFrames = in.getInt();
+    myStabilizationFrames = in.getInt();
+    myHasStabilized = in.getBool();
+
     myVsync = in.getBool();
 
     myVblankLines = in.getInt();
@@ -416,6 +471,9 @@ bool FrameManager::load(Serializer& in)
     myFixedHeight = in.getInt();
 
     myJitterEnabled = in.getBool();
+
+    myStableFrameLines = in.getInt();
+    myStableFrameHeightCountdown = in.getInt();
   }
   catch(...)
   {

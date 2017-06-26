@@ -78,24 +78,24 @@ CartDebug::CartDebug(Debugger& dbg, Console& console, const OSystem& osystem)
   for(uInt16 addr = 0x00; addr <= 0x0F; ++addr)
   {
     if(ourTIAMnemonicR[addr])
-      mySystemAddresses.insert(make_pair(ourTIAMnemonicR[addr], addr));
+      mySystemAddresses.emplace(ourTIAMnemonicR[addr], addr);
     myReserved.TIARead[addr] = false;
   }
   for(uInt16 addr = 0x00; addr <= 0x3F; ++addr)
   {
     if(ourTIAMnemonicW[addr])
-      mySystemAddresses.insert(make_pair(ourTIAMnemonicW[addr], addr));
+      mySystemAddresses.emplace(ourTIAMnemonicW[addr], addr);
     myReserved.TIAWrite[addr] = false;
   }
   for(uInt16 addr = 0x280; addr <= 0x297; ++addr)
   {
     if(ourIOMnemonic[addr-0x280])
-      mySystemAddresses.insert(make_pair(ourIOMnemonic[addr-0x280], addr));
+      mySystemAddresses.emplace(ourIOMnemonic[addr-0x280], addr);
     myReserved.IOReadWrite[addr-0x280] = false;
   }
   for(uInt16 addr = 0x80; addr <= 0xFF; ++addr)
   {
-    mySystemAddresses.insert(make_pair(ourZPMnemonic[addr-0x80], addr));
+    mySystemAddresses.emplace(ourZPMnemonic[addr-0x80], addr);
     myReserved.ZPRAM[addr-0x80] = false;
   }
 
@@ -312,7 +312,7 @@ bool CartDebug::fillDisassemblyList(BankInfo& info, uInt16 search)
     if(tag.type != CartDebug::ROW)
     {
       // Create a mapping from addresses to line numbers
-      myAddrToLineList.insert(make_pair(address, i));
+      myAddrToLineList.emplace(address, i);
 
       // Did we find the search value?
       if(address == (search & 0xFFF))
@@ -517,8 +517,8 @@ bool CartDebug::addLabel(const string& label, uInt16 address)
       return false;
     default:
       removeLabel(label);
-      myUserAddresses.insert(make_pair(label, address));
-      myUserLabels.insert(make_pair(address, label));
+      myUserAddresses.emplace(label, address);
+      myUserLabels.emplace(address, label);
       myLabelLength = std::max(myLabelLength, uInt16(label.size()));
       mySystem.setDirtyPage(address);
       return true;
@@ -676,19 +676,16 @@ int CartDebug::getAddress(const string& label) const
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 string CartDebug::loadListFile()
 {
-  // Currently, the default naming/location for list files is:
-  // 1) ROM dir based on properties entry name
+  // The default naming/location for list files is the ROM dir based on the
+  // actual ROM filename
 
   if(myListFile == "")
   {
-    const string& propsname =
-      myConsole.properties().get(Cartridge_Name) + ".lst";
-
-    FilesystemNode case1(myOSystem.romFile().getParent().getPath() + propsname);
-    if(case1.isFile() && case1.isReadable())
-      myListFile = case1.getPath();
+    FilesystemNode lst(myOSystem.romFile().getPathWithExt("") + ".lst");
+    if(lst.isFile() && lst.isReadable())
+      myListFile = lst.getPath();
     else
-      return DebuggerParser::red("list file not found in:\n  " + case1.getShortPath());
+      return DebuggerParser::red("list file not found in:\n  " + lst.getShortPath());
   }
 
   FilesystemNode node(myListFile);
@@ -728,7 +725,7 @@ string CartDebug::loadListFile()
         char eq = '\0';
         buf >> hex >> xx >> hex >> yy >> line >> eq;
         if(xx >= 0 && yy >= 0 && eq == '=')
-          myUserCLabels.insert(make_pair(xx*256+yy, line));
+          myUserCLabels.emplace(xx*256+yy, line);
       }
     }
   }
@@ -740,19 +737,16 @@ string CartDebug::loadListFile()
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 string CartDebug::loadSymbolFile()
 {
-  // Currently, the default naming/location for symbol files is:
-  // 1) ROM dir based on properties entry name
+  // The default naming/location for symbol files is the ROM dir based on the
+  // actual ROM filename
 
   if(mySymbolFile == "")
   {
-    const string& propsname =
-      myConsole.properties().get(Cartridge_Name) + ".sym";
-
-    FilesystemNode case1(myOSystem.romFile().getParent().getPath() + propsname);
-    if(case1.isFile() && case1.isReadable())
-      mySymbolFile = case1.getPath();
+    FilesystemNode sym(myOSystem.romFile().getPathWithExt("") + ".sym");
+    if(sym.isFile() && sym.isReadable())
+      mySymbolFile = sym.getPath();
     else
-      return DebuggerParser::red("symbol file not found in:\n  " + case1.getShortPath());
+      return DebuggerParser::red("symbol file not found in:\n  " + sym.getShortPath());
   }
 
   FilesystemNode node(mySymbolFile);

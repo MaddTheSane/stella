@@ -82,6 +82,9 @@ TIA::TIA(Console& console, Sound& sound, Settings& settings)
     },
     [this] () {
       onFrameComplete();
+    },
+    [this] () {
+      onRenderingStart();
     }
   );
 
@@ -107,7 +110,6 @@ TIA::TIA(Console& console, Sound& sound, Settings& settings)
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 void TIA::reset()
 {
-  myHblankCtr = 0;
   myHctr = 0;
   myMovementInProgress = false;
   myExtendedHblank = false;
@@ -122,7 +124,8 @@ void TIA::reset()
   myColorHBlank = 0;
   myLastCycle = 0;
   mySubClock = 0;
-  myXDelta = 0;
+  myHctrDelta = 0;
+  myXAtRenderingStart = 0;
 
   memset(myShadowRegisters, 0, 64);
 
@@ -225,9 +228,9 @@ bool TIA::save(Serializer& out) const
 
     out.putInt(int(myHstate));
 
-    out.putInt(myHblankCtr);
     out.putInt(myHctr);
-    out.putInt(myXDelta);
+    out.putInt(myHctrDelta);
+    out.putInt(myXAtRenderingStart);
 
     out.putBool(myCollisionUpdateRequired);
     out.putInt(myCollisionMask);
@@ -294,9 +297,9 @@ bool TIA::load(Serializer& in)
 
     myHstate = HState(in.getInt());
 
-    myHblankCtr = in.getInt();
     myHctr = in.getInt();
-    myXDelta = in.getInt();
+    myHctrDelta = in.getInt();
+    myXAtRenderingStart = in.getInt();
 
     myCollisionUpdateRequired = in.getBool();
     myCollisionMask = in.getInt();
@@ -775,7 +778,7 @@ bool TIA::electronBeamPos(uInt32& x, uInt32& y) const
 {
   uInt8 clocks = clocksThisLine();
 
-  x = clocks < 68 ? 0 : clocks - 68;
+  x = (clocks < 68) ? 0 : clocks - 68;
   y = myFrameManager.getY();
 
   return isRendering();
@@ -986,10 +989,7 @@ void TIA::updateEmulation()
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 void TIA::onFrameStart()
 {
-  const Int32 x = myHctr - 68;
-
-  if (x > 0)
-    memset(myFramebuffer.get(), 0, x);
+  myXAtRenderingStart = 0;
 
   for (uInt8 i = 0; i < 4; i++)
     updatePaddle(i);
@@ -1015,10 +1015,19 @@ void TIA::onFrameStart()
 }
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+void TIA::onRenderingStart()
+{
+  myXAtRenderingStart = myHctr > 68 ? myHctr - 68 : 0;
+}
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 void TIA::onFrameComplete()
 {
   mySystem->m6502().stop();
   mySystem->resetCycles();
+
+  if (myXAtRenderingStart > 0)
+    memset(myFramebuffer.get(), 0, myXAtRenderingStart);
 
   // Blank out any extra lines not drawn this frame
   const uInt32 missingScanlines = myFrameManager.missingScanlines();
@@ -1093,18 +1102,26 @@ void TIA::tickMovement()
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 void TIA::tickHblank()
 {
-  if (myHctr == 0) {
-    myHblankCtr = 0;
-  }
+  switch (myHctr) {
+    case 0:
+      myExtendedHblank = false;
+      break;
 
-  if (++myHblankCtr >= 68) myHstate = HState::frame;
+    case 67:
+      if (!myExtendedHblank) myHstate = HState::frame;
+      break;
+
+    case 75:
+      if (myExtendedHblank) myHstate = HState::frame;
+      break;
+  }
 }
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 void TIA::tickHframe()
 {
   const uInt32 y = myFrameManager.getY();
-  const uInt32 x = myHctr - 68 - myXDelta;
+  const uInt32 x = myHctr - 68 - myHctrDelta;
 
   myCollisionUpdateRequired = true;
 
@@ -1124,7 +1141,7 @@ void TIA::applyRsync()
 {
   const uInt32 x = myHctr > 68 ? myHctr - 68 : 0;
 
-  myXDelta = 157 - x;
+  myHctrDelta = 225 - myHctr;
   if (myFrameManager.isRendering())
     memset(myFramebuffer.get() + myFrameManager.getY() * 160 + x, 0, 160 - x);
 
@@ -1143,8 +1160,7 @@ void TIA::nextLine()
   if (!myMovementInProgress && myLinesSinceChange < 2) myLinesSinceChange++;
 
   myHstate = HState::blank;
-  myExtendedHblank = false;
-  myXDelta = 0;
+  myHctrDelta = 0;
 
   myFrameManager.nextLine();
 
@@ -1277,7 +1293,6 @@ void TIA::delayedWrite(uInt8 address, uInt8 value)
       myMovementInProgress = true;
 
       if (!myExtendedHblank) {
-        myHblankCtr -= 8;
         clearHmoveComb();
         myExtendedHblank = true;
       }
